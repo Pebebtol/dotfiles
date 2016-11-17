@@ -1,0 +1,23 @@
+---
+user:
+  name: Julius Felchow
+  editor: "gvim -O"
+
+path: ~/ascii
+output_path: ~/ascii/Output
+list:
+  colors:    true
+  verbose:   true
+  sort:      index
+  gitstatus: true
+
+  extra_details: [OurBad] # see asciii list --computed for all options
+
+dirs:
+  storage: caterings
+  working: working
+  archive: archive
+  templates: templates
+
+template: default # default template
+

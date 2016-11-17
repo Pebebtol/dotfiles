@@ -1,0 +1,35 @@
+set hintchars=fnrtdsbmhg,.j
+noremap d D
+noremap D d
+noremap n 5j
+noremap j 5j
+noremap r 5k
+noremap k 5k
+noremap s r
+noremap h H
+noremap H L
+noremap b n
+noremap B N
+noremap q L
+noremap x d
+noremap N gT
+noremap J gT
+noremap R gt
+noremap K gt
+noremap v H
+noremap p L
+set visualbell
+colorscheme pibwhite
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
+map <silent> <C-u> :js toggle_bottombar()<CR>
+
+:js << EOF
+function toggle_bottombar() {
+  var bb = document.getElementById('liberator-bottombar');
+  if (!bb)
+    return;
+  bb.style.height = (bb.style.height == '') ? '0px' : '';
+  bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+}
+EOF
