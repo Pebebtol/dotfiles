@@ -265,5 +265,5 @@ exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 60; franz-bin"'
 exec --no-startup-id compton
 exec nm-applet
 exec setxkbmap -layout de neo
-exec syndaemon -i 0.4
+exec syndaemon -i 1 -d
 exec xfce4-power-manager
