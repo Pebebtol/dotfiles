@@ -220,7 +220,8 @@ set $background #ffffff
 bar {
         status_command i3status
         #mode hide
-        font pango: Awesome 8
+        position top
+        font pango:Source-sans-pro 8, Awesome 8
         #modifier $mod
         colors {
             background $barbg
@@ -259,7 +260,7 @@ bindsym $mod+Shift+a exec bash ~/SDMetrics/sdmetrics.sh
 # Please remove the following exec line:
 #######################################################################
 exec --no-startup-id i3-msg 'workspace $tag3; exec firefox'
-exec --no-startup-id i3-msg 'workspace $tag4; exec "sleep 15; terminator"'
+#exec --no-startup-id i3-msg 'workspace $tag4; exec "sleep 15; terminator"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 30; thunderbird"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 60; franz-bin"'
 #exec --no-startup-id compton
