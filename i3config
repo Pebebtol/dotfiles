@@ -177,7 +177,9 @@ bindsym Mod1+Shift+Tab move container to workspace back_and_forth
 # reload the configuration file
 bindsym $mod+Shift+l reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+0 restart
+bindsym $mod+Shift+0 restart 
+bindsym $mod+Shift+f exec killall polybar 
+bindsym $mod+Shift+g exec polybar maintop
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -215,26 +217,26 @@ hide_edge_borders both
 #set $background #002633
 set $barbg #2f2f2f
 #whitetheme
-set $border #00c838
+set $border #555
 set $background #ffffff
 #set $barbg #ffff99
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
+#bar {
+#        status_command i3status
         #mode hide
-        position top
-        font pango:Source-sans-pro 8, Awesome 8
+#        position top
+#        font pango:Source-sans-pro 8, Awesome 8
         #modifier $mod
-        colors {
-            background $barbg
-            focused_workspace  #00c838 #ffffbb #000000
-            inactive_workspace $barbg $barbg #777777
-        }
-}
+#        colors {
+#            background $barbg
+#            focused_workspace  #00c838 #ffffbb #000000
+#            inactive_workspace $barbg $barbg #777777
+#        }
+#}
 # border colors
-client.focused $border $background #ffffff #2e9ef4 $background
+client.focused #777777 $background #ffffff #2e9ef4 $background
 client.focused_inactive #777777 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #777777 #222222 #888888 #292d2e   #222222
 
@@ -255,6 +257,10 @@ bindsym $mod+Shift+v exec bash ~/.magnify.sh
 bindsym $mod+a exec bash ~/MagicDraw/bin/magicdraw
 bindsym $mod+Shift+a exec bash ~/SDMetrics/sdmetrics.sh
 
+# gaps:
+smart_gaps on
+gaps inner 5
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
@@ -264,7 +270,9 @@ bindsym $mod+Shift+a exec bash ~/SDMetrics/sdmetrics.sh
 #
 # Please remove the following exec line:
 #######################################################################
+exec --no-startup-id feh --bg-scale ~/.dotfiles/Backgroundimg.jpg
 exec --no-startup-id i3-msg 'workspace $tag3; exec chromium'
+exec polybar maintop
 #exec --no-startup-id i3-msg 'workspace $tag4; exec "sleep 15; terminator"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 30; thunderbird"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 60; franz-bin"'

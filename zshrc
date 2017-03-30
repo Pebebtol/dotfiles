@@ -7,7 +7,7 @@ export ZSH=/home/pibebtol/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="half-life"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,6 +97,7 @@ alias fuck='sudo $(fc -ln -1)'
 alias torg='telnet www.ateraan.com 4002'
 alias wat='cat ~/mic'
 alias vimi3='gvim ~/.config/i3/config'
+alias vimi3bar='gvim ~/.config/polybar/config'
 alias vimmic='gvim ~/mic'
 alias vimvimp='gvim ~/.vimperatorrc'
 alias psaux='ps -aux'
