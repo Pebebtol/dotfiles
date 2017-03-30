@@ -66,6 +66,8 @@ bindsym Mod1+$up focus up
 bindsym Mod1+$right focus right
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left
+bindsym Mod1+^ focus right
+bindsym Mod1+Shift+^ focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -119,7 +121,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Name the workspaces
-set $tag3 "3:&#xf269;"
+set $tag3 "3:&#xf268;"
 set $tag4 "4:&#xf120;"
 set $tag1 "1:&#xf121;"
 set $tag2 "2:&#xf07b;"
@@ -167,8 +169,10 @@ bindsym $mod+d workspace next
 bindsym $mod+Shift+d move container to workspace next
 bindsym $mod+n workspace prev
 bindsym $mod+Shift+n move container to workspace prev
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+#bindsym Mod1+Tab workspace next
+#bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod1+Tab workspace back_and_forth
+bindsym Mod1+Shift+Tab move container to workspace back_and_forth
 
 # reload the configuration file
 bindsym $mod+Shift+l reload
@@ -243,6 +247,7 @@ bindsym $mod+z exec amixer set Master 5%+
 bindsym $mod+b exec amixer set Master 5%-
 bindsym $mod+c exec synclient TouchpadOff=1
 bindsym $mod+Shift+c exec synclient TouchpadOff=0
+bindsym $mod+Shift+w exec syndaemon -i 0.5 -d
 bindsym $mod+8 exec setxkbmap -layout de neo
 bindsym $mod+9 exec setxkbmap -layout de
 bindsym $mod+0 exec setxkbmap -layout us
@@ -259,7 +264,7 @@ bindsym $mod+Shift+a exec bash ~/SDMetrics/sdmetrics.sh
 #
 # Please remove the following exec line:
 #######################################################################
-exec --no-startup-id i3-msg 'workspace $tag3; exec firefox'
+exec --no-startup-id i3-msg 'workspace $tag3; exec chromium'
 #exec --no-startup-id i3-msg 'workspace $tag4; exec "sleep 15; terminator"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 30; thunderbird"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 60; franz-bin"'
