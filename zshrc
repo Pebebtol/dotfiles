@@ -83,10 +83,10 @@ PATH=$PATH:$HOME/.cargo/bin
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias emzsh="emacs ~/.zshrc"
-alias ohmyzsh="emacs ~/.oh-my-zsh"
-alias emvim="emacs ~/.gvimrc"
-alias emranger="emacs ~/.config/ranger/rc.conf"
+alias emzsh="emacs ~/.zshrc &"
+alias ohmyzsh="emacs ~/.oh-my-zsh &"
+alias emvim="emacs ~/.gvimrc &"
+alias emranger="emacs ~/.config/ranger/rc.conf &"
 alias pacs="sudo pacman"
 alias updt="sudo pacman -Sc && yaourt -Syua"
 alias susp='systemctl suspend && i3lock -c 000000 --ringcolor ffffff33 --insidevercolor 00000000 --insidewrongcolor 00000000 --linecolor ffffffbb --insidecolor 00000000'
@@ -96,10 +96,10 @@ alias shut="shutdown now"
 alias fuck='sudo $(fc -ln -1)'
 alias torg='telnet www.ateraan.com 4002'
 alias wat='cat ~/mic'
-alias emi3='emacs ~/.config/i3/config'
-alias emi3bar='emacs ~/.config/polybar/config'
-alias emmic='emacs ~/mic'
-alias emvimp='emacs ~/.vimperatorrc'
+alias emi3='emacs ~/.config/i3/config &'
+alias emi3bar='emacs ~/.config/polybar/config &'
+alias emmic='emacs ~/mic &'
+alias emvimp='emacs ~/.vimperatorrc &'
 alias psaux='ps -aux'
 alias gnu='gtypist'
 alias todo='todo2'
@@ -108,7 +108,7 @@ alias tda='todo2 -a'
 alias tdA='todo2 -A'
 alias tdd='todo2 -d'
 alias tdr='todo2 --reparent'
-alias emtd='emacs ~/.todo2'
+alias emtd='emacs ~/.todo2 &'
 alias gnuneo='gtypist ktde_neo.typ'
 alias g='googler'
 alias pstp='ps -Ao user,uid,comm,pid,pcpu --sort=-pcpu | head -n 6'
