@@ -60,14 +60,12 @@ bindsym $mod+u exec "rofi -combi-modi window,drun -show combi"
 #bindsym $mod+u exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+#bindsym Mod1+$left focus left
+#bindsym Mod1+$down focus down
+#bindsym Mod1+$up focus up
+#bindsym Mod1+$right focus right
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left
-bindsym Mod1+^ focus right
-bindsym Mod1+Shift+^ focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -76,10 +74,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym $mod+Mod1+Shift+$left move left
+bindsym $mod+Mod1+Shift+$down move down
+bindsym $mod+Mod1+Shift+$up move up
+bindsym $mod+Mod1+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -88,24 +86,24 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+k layout toggle split
+#bindsym $mod+w layout tabbed
+#bindsym $mod+k layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -114,11 +112,11 @@ bindsym $mod+space focus mode_toggle
 # bindsym $mod+d focus child
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+#bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+#bindsym $mod+minus scratchpad show
 
 # Name the workspaces
 set $tag3 "3:&#xf268;"
@@ -173,8 +171,6 @@ bindsym $mod+d workspace next
 bindsym $mod+Shift+d move container to workspace next
 bindsym $mod+n workspace prev
 bindsym $mod+Shift+n move container to workspace prev
-#bindsym Mod1+Tab workspace next
-#bindsym Mod1+Shift+Tab workspace prev
 bindsym Mod1+Tab workspace back_and_forth
 bindsym Mod1+Shift+Tab move container to workspace back_and_forth
 
@@ -182,9 +178,8 @@ bindsym Mod1+Shift+Tab move container to workspace back_and_forth
 bindsym $mod+Shift+l reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+0 restart 
-bindsym $mod+Shift+f exec killall polybar 
-bindsym $mod+Shift+g exec polybar maintop
-bindsym $mod+Shift+h exec polybar subtop
+bindsym $mod+Shift+g exec "killall polybar; polybar maintop;"
+bindsym $mod+Shift+h exec "killall polybar; polybar subtop;"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -254,15 +249,12 @@ bindsym $mod+z exec amixer set Master 5%+
 bindsym $mod+b exec amixer set Master 5%-
 bindsym $mod+c exec synclient TouchpadOff=1
 bindsym $mod+Shift+c exec synclient TouchpadOff=0
-bindsym $mod+Shift+w exec syndaemon -i 0.5 -d
 bindsym $mod+8 exec setxkbmap -layout de neo
 bindsym $mod+9 exec setxkbmap -layout de
 bindsym $mod+0 exec setxkbmap -layout us
-bindsym $mod+Shift+v exec bash ~/.magnify.sh
-#bindsym $mod+a exec bash ~/MagicDraw/bin/magicdraw
-bindsym $mod+Shift+a exec bash ~/SDMetrics/sdmetrics.sh
-bindsym $mod+a exec syndaemon -i 0.5 -d
+bindsym $mod+Shift+v exec "bash ~/.magnify.sh"
 bindsym $mod+e exec emacs
+bindsym $mod+a exec chromium
 
 # gaps:
 smart_gaps on
