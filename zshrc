@@ -55,6 +55,10 @@ plugins=(git archlinux rand-quote extract)
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -89,7 +93,8 @@ alias emvim="emacs ~/.gvimrc &"
 alias emranger="emacs ~/.config/ranger/rc.conf &"
 alias pacs="sudo pacman"
 alias updt="sudo pacman -Sc && yaourt -Syua"
-alias susp='systemctl suspend && i3lock -c 000000 --ringcolor ffffff33 --insidevercolor 00000000 --insidewrongcolor 00000000 --linecolor ffffffbb --insidecolor 00000000'
+#alias susp='systemctl suspend && i3lock -c 000000 --ringcolor ffffff33 --insidevercolor 00000000 --insidewrongcolor 00000000 --linecolor ffffffbb --insidecolor 00000000'
+alias susp='systemctl suspend && slock'
 alias resint='sudo systemctl restart NetworkManager'
 alias shutint='sudo systemctl stop NetworkManager'
 alias shut="shutdown now"
@@ -111,4 +116,15 @@ alias tdr='todo2 --reparent'
 alias emtd='emacs ~/.todo2 &'
 alias gnuneo='gtypist ktde_neo.typ'
 alias g='googler'
+alias gstall='git status -uall'
 alias pstp='ps -Ao user,uid,comm,pid,pcpu --sort=-pcpu | head -n 6'
+alias prism='bash ~/workspace/prism-4.4.beta-linux64/bin/xprism &'
+function mkcd() {
+    if [ -n "$1" ]
+    then
+        mkdir $1
+	cd $1
+    else
+        echo fu
+    fi
+}

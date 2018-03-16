@@ -2,7 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
-# This config file uses keycodes (bindsym) and was written for the QWERTY
+# This config file uses keycode (bindsym) and was written for the QWERTY
 # layout.
 #
 # To get a config file with the same key positions, but for your current
@@ -39,7 +39,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+x kill
@@ -92,7 +92,7 @@ bindsym $mod+Shift+Right move right
 #bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
@@ -225,10 +225,10 @@ set $background #ffffff
 # finds out, if available)
 #bar {
 #        status_command i3status
-        #mode hide
+#        #mode hide
 #        position top
 #        font pango:Source-sans-pro 8, Awesome 8
-        #modifier $mod
+#        #modifier $mod
 #        colors {
 #            background $barbg
 #            focused_workspace  #00c838 #ffffbb #000000
@@ -255,6 +255,7 @@ bindsym $mod+0 exec setxkbmap -layout us
 bindsym $mod+Shift+v exec "bash ~/.magnify.sh"
 bindsym $mod+e exec emacs
 bindsym $mod+a exec chromium
+bindsym $mod+i exec code-insiders
 
 # gaps:
 smart_gaps on
@@ -272,7 +273,7 @@ gaps inner 5
 exec --no-startup-id feh --bg-scale ~/.dotfiles/Backgroundimg.jpg
 #exec --no-startup-id i3-msg 'workspace $tag3; exec chromium'
 exec polybar maintop
-exec --no-startup-id i3-msg 'workspace $tag4; exec terminator'
+exec --no-startup-id i3-msg 'workspace $tag4; exec termite'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 30; thunderbird"'
 #exec --no-startup-id i3-msg 'workspace $tag5; exec "sleep 60; franz-bin"'
 #exec --no-startup-id compton
@@ -282,3 +283,20 @@ exec xbacklight -set 10
 exec setxkbmap -layout de neo
 exec syndaemon -i 0.5 -d
 exec xfce4-power-manager
+
+
+## Plasma Integration
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+#exec --no-startup-id wmctrl -c Plasma
+#for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+## Avoid tiling popups, dropdown windows from plasma
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+#for_window [class="plasmashell"] floating enable;
+#for_window [class="Plasma"] floating enable; border none
+#for_window [title="plasma-desktop"] floating enable; border none
+#for_window [title="win7"] floating enable; border none
+#for_window [class="krunner"] floating enable; border none
+#for_window [class="Kmix"] floating enable; border none
+#for_window [class="Klipper"] floating enable; border none
+#for_window [class="Plasmoidviewer"] floating enable; border none

@@ -1,6 +1,6 @@
 [user]
 	email = julius.felchow@googlemail.com
-	name = pebebtol
+	name = pibebtol
 [alias]
     unstage = reset HEAD --
     rollback = reset -- hard HEAD-1
@@ -8,3 +8,4 @@
     insteadOf = "github:"
 [core]
 	excludesfile = /home/pibebtol/.gitignore_global
+	autocrlf = input

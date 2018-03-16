@@ -263,5 +263,3 @@ tabbrowser tabpanels, #appcontent > #content { background: var(--bg-light) !impo
 @-moz-document regexp("https?://(?!(localhost|twily.info|.*.4chan.org|.*.youtube.com)).*") {
     input, textarea { color: #222628 !important; -moz-appearance: none !important; }
 }*/
-
-
