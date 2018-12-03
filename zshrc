@@ -55,7 +55,7 @@ plugins=(git archlinux rand-quote extract)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -68,9 +68,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacs'
+  export EDITOR='vim'
 else
-  export EDITOR='emacs'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -128,3 +128,32 @@ function mkcd() {
         echo fu
     fi
 }
+
+
+function fh() {
+   command=$(fc -ln 0|               # show history without line numbers
+     awk '!x[$0]++'  |               # drop duplicates (https://unix.stackexchange.com/a/193331)
+     fzf -e +s \
+         --tac \
+         --color=light \
+         --height=20 \
+         --inline-info \
+         --border \
+         --prompt="Search history "  # fuzzy find with exact match, no sorting and custom style
+   				     # tac to reverse the order
+   )
+
+   if [[ !  -z  $param  ]]; then
+     BUFFER=$BUFFER
+     zle redisplay     # redisplay the current command prompt line
+   else
+     # See http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Widgets
+     # for more details on this
+     BUFFER=$command   # replace the buffer of the command prompt with our command
+     zle redisplay     # redisplay the current command prompt line
+#     zle accept-line   # accept the current line in buffer a.k.a "press enter" - Comment out to edit the line
+   fi
+ }
+
+ zle -N fh           # Run my as a zsh widget / line editor thing
+ bindkey "\C-r" fh   # Bind our function to ctrl-r

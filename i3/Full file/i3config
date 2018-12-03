@@ -60,10 +60,6 @@ bindsym $mod+u exec "rofi -combi-modi window,drun -show combi"
 #bindsym $mod+u exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym Mod1+$left focus left
-#bindsym Mod1+$down focus down
-#bindsym Mod1+$up focus up
-#bindsym Mod1+$right focus right
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus left
 

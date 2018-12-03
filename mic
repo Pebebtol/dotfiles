@@ -1,9 +1,0 @@
-torg
-alias |grep ...? list aliases with ...?
-psaux (|grep)
-paclsorphans list orphans
-gst status
-gaa add all
-gcam '' commit with message
-gp push
-gup pull

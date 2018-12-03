@@ -1,10 +1,10 @@
 ---
 user:
   name: Julius Felchow
-  editor: "gvim -O"
+  editor: "mousepad"
 
-path: ~/ascii
-output_path: ~/ascii/Output
+path: ~/Ascii
+output_path: ~/Ascii/Output
 list:
   colors:    true
   verbose:   true
