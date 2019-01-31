@@ -42,10 +42,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym n resize shrink width 5 px or 5 ppt
+        bindsym r resize grow height 5 px or 5 ppt
+        bindsym t resize shrink height 5 px or 5 ppt
+        bindsym d resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -77,8 +77,8 @@ exec --no-startup-id xautolock -time 10 -locker colortimelock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id guake
-exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Accel Speed" 0.5
-exec xinput set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
+exec xinput set-prop "Elan Touchpad" "libinput Accel Speed" 0.5
+exec xinput --disable "Elan Touchpad"
 #exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/anki'
 exec --no-startup-id i3-msg 'workspace $ws1; exec vym; exec sleep 3'
 #exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/vivaldi-stable; exec sleep 5'
@@ -86,16 +86,26 @@ exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace $ws4; exec gnome-terminal -- tmux; exec sleep 5'
 exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec keepassxc;'
+exec --no-startup-id i3-msg 'exec thunderbird;'
 
 ##################
 ## Move Windows ##
 ##################
 for_window [class="Thunderbird"] move scratchpad
-for_window [class="spotify"] move scratchpad
+for_window [class="Thunderbird"] move position 1560 0
+for_window [class="Thunderbird"] resize set width 1000
+for_window [class="Thunderbird"] resize set height 1440
+#bindsym d resize grow width 5 px or 5 ppt
+for_window [class="Spotify"] move scratchpad
+for_window [class="Spotify"] move position 0 0
+for_window [class="Spotify"] resize set width 1000
+for_window [class="Spotify"] resize set height 1440
 for_window [class="keepassxc"] move scratchpad
+for_window [class="keepassxc"] move position 0 0
+for_window [class="keepassxc"] resize set width 500
+for_window [class="keepassxc"] resize set height 1440
 for_window [class="vym"] move container to workspace $ws2
 for_window [class="Firefox"] move container to workspace $ws3
-for_window [class="Gnome-terminal"] move container to workspace $ws4
 
 ##################
 ## Theme colors ##

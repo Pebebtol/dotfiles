@@ -1,0 +1,71 @@
+#!/bin/bash
+TIME=`date +"%H"`
+
+FILES=( "11-Night" "12-Night" "01-Morning" "02-Morning" "03-Morning" "04-Day" "05-Day" "06-Day" "07-Evening" "08-Evening" "09-Evening" "10-Night" )
+
+if (( TIME % 2 == 0 ))  ; then
+    let NUMBER=TIME/2
+else
+    let NUMBER=TIME/2-1
+fi
+
+LOCK="-i /home/pibebtol/.dotfiles/i3/locker/backgrounds/${FILES[$NUMBER]}Blur.png"
+
+let COUNT=`pactl list | grep "State: RUNNING" | wc -l`
+
+UNBLOCK=false
+for var in "$@"
+do
+    if [ "$var" == "--unblock" ] ; then
+        UNBLOCK=true
+    fi
+done
+
+B='#00000000'  # blank
+C='#00000033'  # clear ish
+D='#013766dd'  # default
+T='#ffffffee'  # text
+W='#dd0000cc'  # wrong
+BS='#ff0000cc'  # backspace
+V='#4ee1e0dd'  # verifying
+
+I='#aad3eddd'  # input
+
+BLOCK_STRING='-n'
+if [ "$UNBLOCK" == true ]; then
+    BLOCK_STRING=''
+fi
+
+i3lock -c 101010 $LOCK $BLOCK_STRING -f   \
+-k --indicator \
+\
+--insidevercolor=$C      \
+--ringvercolor=$V        \
+\
+--insidewrongcolor=$C    \
+--ringwrongcolor=$W      \
+\
+--insidecolor=$C         \
+--ringcolor=$D           \
+--linecolor=$B           \
+--separatorcolor=$D      \
+\
+--timecolor=$T           \
+--datecolor=$T           \
+--verifcolor=$T          \
+--wrongcolor=$T          \
+--timecolor=$T           \
+--keyhlcolor=$I          \
+--bshlcolor=$BS          \
+--timestr="%H:%M"        \
+--datestr="%A, %d %b %Y" \
+--veriftext="verifying…" \
+--wrongtext="wrong!"     \
+--wrongtext="clean"      \
+--timesize=28            \
+--datesize=12            \
+--layoutsize=24          \
+--verifsize=24           \
+--wrongsize=24           \
+
+COUNT=0

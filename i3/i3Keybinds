@@ -8,10 +8,10 @@
 #bindsym $mod+n border normal (kinda fucked)
 
 # hide/unhide i3status bar
-bindsym $mod+Shift+p bar mode toggle
+bindsym $mod+p bar mode toggle
 
 # info updater
-bindsym $mod+Shift+Return exec dunstify -p "$(date +%Y/%m/%d\|%H:%M:%S) - $(acpi)"
+bindsym $mod+Return exec dunstify -p "$(date +%Y/%m/%d\|%H:%M:%S) - $(acpi)"
 
 # Lock screen
 #bindsym $mod+Shift+l exec --no-startup-id blurlock
@@ -72,10 +72,10 @@ bindsym $mod+Shift+7 --release exec "killall dunst; exec notify-send 'restart du
 bindsym XF86TouchpadToggle exec --no-startup-id i3-scrot
 bindsym $mod+Shift+h exec sm
 bindsym $mod+Shift+z exec xzoom
-bindsym $mod+a exec --no-startup-id "i3-msg 'workspace 1; append_layout ./defaultLayout.json'"
+bindsym $mod+e exec --no-startup-id "./eclipse-workspace/eclipse/eclipse"
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Shift+Return exec gnome-terminal
 
 # start program launcher
 #bindsym $mod+u exec --no-startup-id dmenu_recency     ### alternative to rofi, rofi is better
@@ -117,9 +117,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+#bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle

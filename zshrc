@@ -157,3 +157,4 @@ function fh() {
 
  zle -N fh           # Run my as a zsh widget / line editor thing
  bindkey "\C-r" fh   # Bind our function to ctrl-r
+export LANG=en_US.UTF-8
