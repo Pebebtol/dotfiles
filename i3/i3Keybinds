@@ -70,7 +70,7 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+Shift+7 --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym XF86TouchpadToggle exec --no-startup-id i3-scrot
-bindsym $mod+Shift+h exec sm
+#bindsym $mod+Shift+h exec sm
 bindsym $mod+Shift+z exec xzoom
 bindsym $mod+e exec --no-startup-id "./eclipse-workspace/eclipse/eclipse"
 
@@ -147,13 +147,14 @@ bindsym $mod+Shift+space floating toggle
 #bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+k move scratchpad
+bindsym $mod+Shift+h move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+h scratchpad show
 bindsym $mod+k [class="keepassxc"] scratchpad show
 bindsym $mod+m [class="Thunderbird"] scratchpad show
+bindsym $mod+g [class="Terminator"] scratchpad show
 bindsym $mod+Shift+m [class="Spotify"] scratchpad show
 bindsym $mod+Shift+b [class="TeamSpeak 3"] scratchpad show
 

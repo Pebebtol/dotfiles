@@ -87,6 +87,7 @@ exec --no-startup-id i3-msg 'workspace $ws4; exec gnome-terminal -- tmux; exec s
 exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec keepassxc;'
 exec --no-startup-id i3-msg 'exec thunderbird;'
+exec --no-startup-id i3-msg 'exec terminator;'
 
 ##################
 ## Move Windows ##
@@ -101,8 +102,8 @@ for_window [class="Spotify"] move position 0 0
 for_window [class="Spotify"] resize set width 1000
 for_window [class="Spotify"] resize set height 1440
 for_window [class="TeamSpeak 3"] move scratchpad
-for_window [class="TeamSpeak 3"] move position 2000 0
-for_window [class="TeamSpeak 3"] resize set width 560
+for_window [class="TeamSpeak 3"] move position 2200 0
+for_window [class="TeamSpeak 3"] resize set width 360
 for_window [class="TeamSpeak 3"] resize set height 1440
 for_window [class="keepassxc"] move scratchpad
 for_window [class="keepassxc"] move position 0 0
@@ -110,6 +111,10 @@ for_window [class="keepassxc"] resize set width 500
 for_window [class="keepassxc"] resize set height 1440
 for_window [class="vym"] move container to workspace $ws2
 for_window [class="Firefox"] move container to workspace $ws3
+for_window [class="Terminator"] move scratchpad
+for_window [class="Terminator"] move position 0 0
+for_window [class="Terminator"] resize set width 2560
+for_window [class="Terminator"] resize set height 440
 
 ##################
 ## Theme colors ##
