@@ -155,6 +155,7 @@ bindsym $mod+h scratchpad show
 bindsym $mod+k [class="keepassxc"] scratchpad show
 bindsym $mod+m [class="Thunderbird"] scratchpad show
 bindsym $mod+g [class="Terminator"] scratchpad show
+bindsym $mod+v [class="vym"] scratchpad show
 bindsym $mod+Shift+m [class="Spotify"] scratchpad show
 bindsym $mod+Shift+b [class="TeamSpeak 3"] scratchpad show
 

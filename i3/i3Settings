@@ -42,10 +42,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym n resize shrink width 5 px or 5 ppt
-        bindsym r resize grow height 5 px or 5 ppt
-        bindsym t resize shrink height 5 px or 5 ppt
-        bindsym d resize grow width 5 px or 5 ppt
+        bindsym s resize shrink width 5 px or 5 ppt
+        bindsym n resize grow height 5 px or 5 ppt
+        bindsym r resize shrink height 5 px or 5 ppt
+        bindsym t resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -114,7 +114,11 @@ for_window [class="Firefox"] move container to workspace $ws3
 for_window [class="Terminator"] move scratchpad
 for_window [class="Terminator"] move position 0 0
 for_window [class="Terminator"] resize set width 2560
-for_window [class="Terminator"] resize set height 440
+for_window [class="Terminator"] resize set height 250
+for_window [class="vym"] move scratchpad
+for_window [class="vym"] move position 0 0
+for_window [class="vym"] resize set width 2560
+for_window [class="vym"] resize set height 1440
 
 ##################
 ## Theme colors ##
