@@ -23,7 +23,7 @@ hide_edge_borders none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 11
+font xft:URWGothic-Book 9
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -95,30 +95,30 @@ exec --no-startup-id i3-msg 'exec terminator;'
 for_window [class="Thunderbird"] move scratchpad
 for_window [class="Thunderbird"] move position 1560 0
 for_window [class="Thunderbird"] resize set width 1000
-for_window [class="Thunderbird"] resize set height 1440
+for_window [class="Thunderbird"] resize set height 1415
 #bindsym d resize grow width 5 px or 5 ppt
 for_window [class="Spotify"] move scratchpad
 for_window [class="Spotify"] move position 0 0
 for_window [class="Spotify"] resize set width 1000
-for_window [class="Spotify"] resize set height 1440
+for_window [class="Spotify"] resize set height 1415
 for_window [class="TeamSpeak 3"] move scratchpad
 for_window [class="TeamSpeak 3"] move position 2200 0
 for_window [class="TeamSpeak 3"] resize set width 360
-for_window [class="TeamSpeak 3"] resize set height 1440
+for_window [class="TeamSpeak 3"] resize set height 1415
 for_window [class="keepassxc"] move scratchpad
 for_window [class="keepassxc"] move position 0 0
-for_window [class="keepassxc"] resize set width 500
-for_window [class="keepassxc"] resize set height 1440
+for_window [class="keepassxc"] resize set width 250
+for_window [class="keepassxc"] resize set height 1415
 for_window [class="vym"] move container to workspace $ws2
 for_window [class="Firefox"] move container to workspace $ws3
 for_window [class="Terminator"] move scratchpad
 for_window [class="Terminator"] move position 0 0
 for_window [class="Terminator"] resize set width 2560
-for_window [class="Terminator"] resize set height 250
+for_window [class="Terminator"] resize set height 500
 for_window [class="vym"] move scratchpad
 for_window [class="vym"] move position 0 0
 for_window [class="vym"] resize set width 2560
-for_window [class="vym"] resize set height 1440
+for_window [class="vym"] resize set height 1415
 
 ##################
 ## Theme colors ##
