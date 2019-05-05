@@ -69,7 +69,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkills
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+Shift+7 --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym XF86TouchpadToggle exec --no-startup-id i3-scrot
+bindsym Mod1+XF86TouchpadToggle exec --no-startup-id i3-scrot
 #bindsym $mod+Shift+h exec sm
 bindsym $mod+Shift+z exec xzoom
 bindsym $mod+e exec --no-startup-id "./eclipse-workspace/eclipse/eclipse"

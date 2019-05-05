@@ -80,10 +80,10 @@ exec --no-startup-id guake
 exec xinput set-prop "Elan Touchpad" "libinput Accel Speed" 0.5
 exec xinput --disable "Elan Touchpad"
 #exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/anki'
-exec --no-startup-id i3-msg 'workspace $ws1; exec vym; exec sleep 3'
+exec --no-startup-id i3-msg 'exec vym;'
 #exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/vivaldi-stable; exec sleep 5'
 exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace $ws4; exec gnome-terminal -- tmux; exec sleep 5'
+exec --no-startup-id i3-msg 'workspace $ws4; exec gnome-terminal;'
 exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec keepassxc;'
 exec --no-startup-id i3-msg 'exec thunderbird;'
@@ -109,7 +109,6 @@ for_window [class="keepassxc"] move scratchpad
 for_window [class="keepassxc"] move position 0 0
 for_window [class="keepassxc"] resize set width 250
 for_window [class="keepassxc"] resize set height 1415
-for_window [class="vym"] move container to workspace $ws2
 for_window [class="Firefox"] move container to workspace $ws3
 for_window [class="Terminator"] move scratchpad
 for_window [class="Terminator"] move position 0 0
